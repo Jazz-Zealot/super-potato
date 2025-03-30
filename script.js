@@ -4,7 +4,7 @@ let currentIndex = -1;
 let score = parseInt(localStorage.getItem("score")) || 0;
 let total = parseInt(localStorage.getItem("total")) || 0;
 let countdown = null;
-let timeLeft = 10;
+let timeLeft = 30;
 
 const app = document.getElementById("app");
 const scoreboard = document.getElementById("scoreboard");
