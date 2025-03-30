@@ -37,83 +37,87 @@ const sentences = [
     image: "images/sentence3.png"
   },
   {
-    id: 4,
-    sentence: "Learning to recognize the structure of a sentence can make it easier to understand its meaning, especially when reading complex academic texts.",
-    parts: [
-      "Learning to recognize the structure of a sentence",
-      "can make it easier to understand its meaning,",
-      "especially when reading complex academic texts."
-    ],
-    audio: "audio/D4.mp3",
-    image: "images/sentence4.png"
-  },
-  {
-    id: 5,
-    sentence: "Although the new regulations were intended to reduce air pollution, many factories continued to emit harmful gases due to lack of enforcement.",
-    parts: [
-      "Although the new regulations were intended to reduce air pollution,",
-      "many factories continued to emit harmful gases",
-      "due to lack of enforcement."
-    ],
-    audio: "audio/D5.mp3",
-    image: "images/sentence5.png"
-  },
-  {
-    id: 6,
-    sentence: "Because he had not prepared for the presentation, his speech was disorganized and failed to impress the audience.",
-    parts: [
-      "Because he had not prepared for the presentation,",
-      "his speech was disorganized",
-      "and failed to impress the audience."
-    ],
-    audio: "audio/D6.mp3",
-    image: "images/sentence6.png"
-  },
-  {
-    id: 7,
-    sentence: "Scientists argue that climate change is accelerating due to increased carbon emissions, deforestation, and other human activities.",
-    parts: [
-      "Scientists argue that climate change is accelerating",
-      "due to increased carbon emissions,",
-      "deforestation,",
-      "and other human activities."
-    ],
-    audio: "audio/D7.mp3",
-    image: "images/sentence7.png"
-  },
-  {
-    id: 8,
-    sentence: "Despite receiving several warnings, the student continued to arrive late to class, which eventually affected his grade.",
-    parts: [
-      "Despite receiving several warnings,",
-      "the student continued to arrive late to class,",
-      "which eventually affected his grade."
-    ],
-    audio: "audio/D8.mp3",
-    image: "images/sentence8.png"
-  },
-  {
-    id: 9,
-    sentence: "The museum’s new exhibition, which features interactive displays and virtual reality tours, has attracted a record number of visitors.",
-    parts: [
-      "The museum’s new exhibition,",
-      "which features interactive displays and virtual reality tours,",
-      "has attracted a record number of visitors."
-    ],
-    audio: "audio/D9.mp3",
-    image: "images/sentence9.png"
-  },
-  {
-    id: 10,
-    sentence: "If we are to solve the energy crisis, we must invest more heavily in renewable resources and reduce our dependence on fossil fuels.",
-    parts: [
-      "If we are to solve the energy crisis,",
-      "we must invest more heavily in renewable resources",
-      "and reduce our dependence on fossil fuels."
-    ],
-    audio: "audio/D10.mp3",
-    image: "images/sentence10.png"
-  }
+  id: 4,
+  sentence: "The phrase “substance abuse” is often used instead of “drug abuse” to make clear that substances such as alcohol and tobacco can be just as harmfully misused as heroin and cocaine.",
+  parts: [
+    "The phrase “substance abuse” is often used instead of “drug abuse”",
+    "to make clear that substances such as alcohol and tobacco",
+    "can be just as harmfully misused as heroin and cocaine."
+  ],
+  audio: "audio/D4.mp3",
+  image: "images/sentence4.png"
+},
+{
+  id: 5,
+  sentence: "We live in a society in which the medicinal and social use of substances (drugs) is pervasive: an aspirin to quiet a headache, some wine to be sociable, coffee to get going in the morning, a cigarette for the nerves.",
+  parts: [
+    "We live in a society",
+    "in which the medicinal and social use of substances (drugs) is pervasive:",
+    "an aspirin to quiet a headache,",
+    "some wine to be sociable,",
+    "coffee to get going in the morning,",
+    "a cigarette for the nerves."
+  ],
+  audio: "audio/D5.mp3",
+  image: "images/sentence5.png"
+},
+{
+  id: 6,
+  sentence: "Dependence is marked first by an increased tolerance, with more and more of the substance required to produce the desired effect, and then by the appearance of unpleasant withdrawal symptoms when the substance is discontinued.",
+  parts: [
+    "Dependence is marked first by an increased tolerance,",
+    "with more and more of the substance required to produce the desired effect,",
+    "and then by the appearance of unpleasant withdrawal symptoms",
+    "when the substance is discontinued."
+  ],
+  audio: "audio/D6.mp3",
+  image: "images/sentence6.png"
+},
+{
+  id: 7,
+  sentence: "Drugs (substances) that affect the central nervous system and alter perception, mood, and behavior are known as psychoactive substances.",
+  parts: [
+    "Drugs (substances) that affect the central nervous system",
+    "and alter perception, mood, and behavior",
+    "are known as psychoactive substances."
+  ],
+  audio: "audio/D7.mp3",
+  image: "images/sentence7.png"
+},
+{
+  id: 8,
+  sentence: "The test of any democratic society lies not in how well it can control expression but in whether it gives freedom of thought and expression the widest possible latitude, however disputable or irritating the results may sometimes be.",
+  parts: [
+    "The test of any democratic society lies not in how well it can control expression",
+    "but in whether it gives freedom of thought and expression the widest possible latitude,",
+    "however disputable or irritating the results may sometimes be."
+  ],
+  audio: "audio/D8.mp3",
+  image: "images/sentence8.png"
+},
+{
+  id: 9,
+  sentence: "Though some of us have known for many, many years that the freedoms under the First Amendment are not totally unlimited, I think it is perhaps the case that some people associated with the company have only recently come to realize this.",
+  parts: [
+    "Though some of us have known for many, many years",
+    "that the freedoms under the First Amendment are not totally unlimited,",
+    "I think it is perhaps the case",
+    "that some people associated with the company have only recently come to realize this."
+  ],
+  audio: "audio/D9.mp3",
+  image: "images/sentence9.png"
+},
+{
+  id: 10,
+  sentence: "Much of the language used to describe monetary policy, such as “steering the economy to a soft landing” or “a touch on the brakes”, makes it sound like a precise science.",
+  parts: [
+    "Much of the language used to describe monetary policy,",
+    "such as “steering the economy to a soft landing” or “a touch on the brakes”,",
+    "makes it sound like a precise science."
+  ],
+  audio: "audio/D10.mp3",
+  image: "images/sentence10.png"
+}
 ];
 
 let currentIndex = -1;
