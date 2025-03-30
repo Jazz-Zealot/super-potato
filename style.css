@@ -1,6 +1,52 @@
-
 body {
-  font-family: sans-serif;
-  padding: 2rem;
-  background: #f7f7f7;
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #fefefe;
+  color: #333;
+}
+
+h1 {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+#scoreboard {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+#timer {
+  color: darkred;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+#controls {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+#controls button {
+  margin: 0.5rem;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #3498db;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+#controls button:hover {
+  background-color: #2980b9;
+}
+
+blockquote {
+  margin-top: 1rem;
+  background-color: #f2f2f2;
+  padding: 1rem;
+  border-left: 5px solid #ccc;
 }
