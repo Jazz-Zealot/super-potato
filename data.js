@@ -61,67 +61,6 @@ const sentences = [
     scene: "图 5 场景描述占位",
     audio: "audio/D5.mp3",
     image: "images/sentence5.png"
-  },
-  {
-    id: 6,
-    sentence: "Because he had not prepared for the presentation, his speech was disorganized and failed to impress the audience.",
-    parts: [
-      "Because he had not prepared for the presentation,",
-      "his speech was disorganized",
-      "and failed to impress the audience."
-    ],
-    scene: "图 6 场景描述占位",
-    audio: "audio/D6.mp3",
-    image: "images/sentence6.png"
-  },
-  {
-    id: 7,
-    sentence: "Scientists argue that climate change is accelerating due to increased carbon emissions, deforestation, and other human activities.",
-    parts: [
-      "Scientists argue that climate change is accelerating",
-      "due to increased carbon emissions,",
-      "deforestation,",
-      "and other human activities."
-    ],
-    scene: "图 7 场景描述占位",
-    audio: "audio/D7.mp3",
-    image: "images/sentence7.png"
-  },
-  {
-    id: 8,
-    sentence: "Despite receiving several warnings, the student continued to arrive late to class, which eventually affected his grade.",
-    parts: [
-      "Despite receiving several warnings,",
-      "the student continued to arrive late to class,",
-      "which eventually affected his grade."
-    ],
-    scene: "图 8 场景描述占位",
-    audio: "audio/D8.mp3",
-    image: "images/sentence8.png"
-  },
-  {
-    id: 9,
-    sentence: "The museum’s new exhibition, which features interactive displays and virtual reality tours, has attracted a record number of visitors.",
-    parts: [
-      "The museum’s new exhibition,",
-      "which features interactive displays and virtual reality tours,",
-      "has attracted a record number of visitors."
-    ],
-    scene: "图 9 场景描述占位",
-    audio: "audio/D9.mp3",
-    image: "images/sentence9.png"
-  },
-  {
-    id: 10,
-    sentence: "If we are to solve the energy crisis, we must invest more heavily in renewable resources and reduce our dependence on fossil fuels.",
-    parts: [
-      "If we are to solve the energy crisis,",
-      "we must invest more heavily in renewable resources",
-      "and reduce our dependence on fossil fuels."
-    ],
-    scene: "图 10 场景描述占位",
-    audio: "audio/D10.mp3",
-    image: "images/sentence10.png"
   }
 ];
 
