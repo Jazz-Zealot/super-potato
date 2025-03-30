@@ -1,15 +1,26 @@
-
 import sentences from "./data.js";
 
-const app = document.getElementById("app");
-app.innerHTML = "";
+let currentIndex = -1;
+let score = 0;
+let total = 0;
 
-sentences.forEach((s, index) => {
+const app = document.getElementById("app");
+const scoreboard = document.getElementById("scoreboard");
+const nextBtn = document.getElementById("nextBtn");
+const showAnswerBtn = document.getElementById("showAnswerBtn");
+
+function updateScoreboard() {
+  scoreboard.textContent = `Score: ${score} / ${total}`;
+}
+
+function renderSentence(index) {
+  const s = sentences[index];
+  app.innerHTML = "";
+
   const block = document.createElement("div");
-  block.style.marginBottom = "2rem";
 
   const title = document.createElement("h3");
-  title.textContent = `Sentence ${index + 1}`;
+  title.textContent = `Sentence ${s.id}`;
   block.appendChild(title);
 
   const audio = document.createElement("audio");
@@ -34,8 +45,33 @@ sentences.forEach((s, index) => {
   block.appendChild(parts);
 
   const full = document.createElement("blockquote");
-  full.textContent = s.sentence;
+  full.textContent = "(Answer hidden)";
+  full.id = "fullSentence";
+  full.style.fontStyle = "italic";
   block.appendChild(full);
 
   app.appendChild(block);
-});
+}
+
+function nextSentence() {
+  const newIndex = Math.floor(Math.random() * sentences.length);
+  currentIndex = newIndex;
+  total++;
+  renderSentence(currentIndex);
+  updateScoreboard();
+}
+
+function showAnswer() {
+  const full = document.getElementById("fullSentence");
+  if (full && currentIndex >= 0) {
+    full.textContent = sentences[currentIndex].sentence;
+    score++;
+    updateScoreboard();
+  }
+}
+
+nextBtn.addEventListener("click", nextSentence);
+showAnswerBtn.addEventListener("click", showAnswer);
+
+// 初始加载一句
+nextSentence();
