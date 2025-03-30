@@ -1,0 +1,15 @@
+.hidden {
+  display: none;
+}
+#shop {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 1em;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
