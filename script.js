@@ -32,7 +32,7 @@ function startTimer() {
     updateTimer();
     if (timeLeft <= 0) {
       clearInterval(countdown);
-      showAnswer(true); // 自动触发显示答案，不加分
+      showAnswer(true); // 自动触发，不加分
     }
   }, 1000);
 }
@@ -68,6 +68,7 @@ function renderSentence(index) {
   });
   block.appendChild(parts);
 
+  // ⛔ 初始不显示原句，只显示 placeholder
   const full = document.createElement("blockquote");
   full.textContent = "(Answer hidden)";
   full.id = "fullSentence";
@@ -108,6 +109,6 @@ nextBtn.addEventListener("click", nextSentence);
 showAnswerBtn.addEventListener("click", () => showAnswer(false));
 resetBtn.addEventListener("click", resetScore);
 
-// 初始化
+// 初始化加载
 updateScoreboard();
 nextSentence();
