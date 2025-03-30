@@ -32,7 +32,7 @@ function startTimer() {
     updateTimer();
     if (timeLeft <= 0) {
       clearInterval(countdown);
-      showAnswer(true); // 自动触发，不加分
+      showAnswer(true); // 自动触发，显示内容但不加分
     }
   }, 1000);
 }
@@ -60,15 +60,12 @@ function renderSentence(index) {
   image.style.marginTop = "1rem";
   block.appendChild(image);
 
+  // 📌 不显示 parts，提前留位置，用 id
   const parts = document.createElement("ul");
-  s.parts.forEach(p => {
-    const li = document.createElement("li");
-    li.textContent = p;
-    parts.appendChild(li);
-  });
+  parts.id = "partsList";
   block.appendChild(parts);
 
-  // ⛔ 初始不显示原句，只显示 placeholder
+  // 📌 不显示 sentence，留空占位
   const full = document.createElement("blockquote");
   full.textContent = "(Answer hidden)";
   full.id = "fullSentence";
@@ -88,9 +85,22 @@ function nextSentence() {
 }
 
 function showAnswer(auto = false) {
+  const s = sentences[currentIndex];
   const full = document.getElementById("fullSentence");
+  const partsList = document.getElementById("partsList");
+
   if (full && currentIndex >= 0) {
-    full.textContent = sentences[currentIndex].sentence;
+    // ✅ 显示原句
+    full.textContent = s.sentence;
+
+    // ✅ 显示分句
+    s.parts.forEach(p => {
+      const li = document.createElement("li");
+      li.textContent = p;
+      partsList.appendChild(li);
+    });
+
+    // ✅ 控制得分（非自动模式才加分）
     if (!auto) score++;
     clearInterval(countdown);
     updateScoreboard();
@@ -109,6 +119,6 @@ nextBtn.addEventListener("click", nextSentence);
 showAnswerBtn.addEventListener("click", () => showAnswer(false));
 resetBtn.addEventListener("click", resetScore);
 
-// 初始化加载
+// 初始化
 updateScoreboard();
 nextSentence();
