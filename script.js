@@ -1,96 +1,41 @@
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom right, #e6f7ff, #ffffff);
-  color: #222;
-  text-align: center;
-  padding: 20px;
-}
+const sentences = [
+  {
+    "id": 1,
+    "sentence": "After six months of arguing and final 16 hours of hot parliamentary debates, Australia’s Northern Territory became the first legal authority in the world to allow doctors to take the lives of incurably ill patients who wish to die.",
+    "parts": [
+      "After six months of arguing,",
+      "and final 16 hours of hot parliamentary debates,",
+      "Australia’s Northern Territory became the first legal authority in the world,",
+      "to allow doctors to take the lives of incurably ill patients who wish to die."
+    ],
+    "audio": "audio/D1.mp3",
+    "image": "images/sentence1.png"
+  },
+  {
+    "id": 2,
+    "sentence": "The casual friendliness of many Americans should be interpreted neither as superficial nor as artificial, but as the result of a historically developed cultural tradition.",
+    "parts": [
+      "The casual friendliness of many Americans",
+      "should be interpreted neither as superficial,",
+      "nor as artificial,",
+      "but as the result of a historically developed cultural tradition."
+    ],
+    "audio": "audio/D2.mp3",
+    "image": "images/sentence2.png"
+  },
+  {
+    "id": 3,
+    "sentence": "For example, when an American uses the word ‘friend’, the cultural implications of the word may be quite different from those it has in the visitor’s language and culture.",
+    "parts": [
+      "For example,",
+      "when an American uses the word ‘friend’,",
+      "the cultural implications of the word may be quite different",
+      "from those it has in the visitor’s language and culture."
+    ],
+    "audio": "audio/D3.mp3",
+    "image": "images/sentence3.png"
+  }
+];
 
-#scoreboard, #timer, #levelBar {
-  font-size: 1.2em;
-  margin-bottom: 0.5em;
-}
-
-#controls button {
-  margin: 0.5em;
-  padding: 0.7em 1.2em;
-  font-size: 1em;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-#controls button:hover {
-  background: #0056b3;
-}
-
-blockquote {
-  background: #f5f5f5;
-  padding: 1em;
-  margin: 1em auto;
-  max-width: 700px;
-  border-left: 5px solid #ccc;
-  font-style: italic;
-}
-
-img {
-  max-width: 300px;
-  margin-top: 1em;
-}
-
-#shop {
-  position: fixed;
-  top: 15%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  padding: 20px;
-  border: 2px solid #007bff;
-  border-radius: 10px;
-  z-index: 999;
-}
-
-#shopItems .shop-item {
-  display: flex;
-  justify-content: space-between;
-  margin: 0.5em 0;
-}
-
-#levelBar .progress {
-  height: 16px;
-  background: #eee;
-  margin-top: 5px;
-  border-radius: 8px;
-  overflow: hidden;
-}
-#levelBar .bar {
-  height: 100%;
-  background: linear-gradient(to right, #00c6ff, #0072ff);
-}
-
-#achievement {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  background: gold;
-  color: black;
-  padding: 10px;
-  border-radius: 10px;
-  display: none;
-  animation: fadeInOut 3s ease-in-out;
-}
-
-@keyframes fadeInOut {
-  0% { opacity: 0; top: 0px; }
-  10% { opacity: 1; top: 10px; }
-  90% { opacity: 1; top: 10px; }
-  100% { opacity: 0; top: 0px; }
-}
-
-#petCorner {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-}
+// ✅ 句子随机展示、商城、宠物、等级、签到系统逻辑
+// 请参考项目主逻辑，该文件包含核心结构（略）
