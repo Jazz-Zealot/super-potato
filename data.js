@@ -1,4 +1,4 @@
-const sentences = [
+export const sentences = [
   {
     id: 1,
     sentence: "After six months of arguing and final 16 hours of hot parliamentary debates, Australia’s Northern Territory became the first legal authority in the world to allow doctors to take the lives of incurably ill patients who wish to die.",
@@ -118,5 +118,3 @@ const sentences = [
     image: "images/sentence10.png"
   }
 ];
-
-export default sentences;
