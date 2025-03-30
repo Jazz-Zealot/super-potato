@@ -37,5 +37,15 @@ const sentences = [
   }
 ];
 
-// ✅ 句子随机展示、商城、宠物、等级、签到系统逻辑
-// 请参考项目主逻辑，该文件包含核心结构（略）
+const shopBtn = document.getElementById("shopBtn");
+const closeShopBtn = document.getElementById("closeShopBtn");
+const shop = document.getElementById("shop");
+
+shopBtn.addEventListener("click", () => {
+  shop.classList.toggle("hidden");
+});
+
+closeShopBtn.addEventListener("click", () => {
+  shop.classList.add("hidden");
+});
+
