@@ -35,8 +35,9 @@ blockquote {
 }
 
 img {
+  display: block;
+  margin: 1rem auto;
   max-width: 300px;
-  margin-top: 1em;
 }
 
 #shop {
