@@ -1,21 +1,45 @@
 import sentences from "./data.js";
 
 let currentIndex = -1;
-let score = 0;
-let total = 0;
+let score = parseInt(localStorage.getItem("score")) || 0;
+let total = parseInt(localStorage.getItem("total")) || 0;
+let countdown = null;
+let timeLeft = 10;
 
 const app = document.getElementById("app");
 const scoreboard = document.getElementById("scoreboard");
+const timerDisplay = document.getElementById("timer");
 const nextBtn = document.getElementById("nextBtn");
 const showAnswerBtn = document.getElementById("showAnswerBtn");
+const resetBtn = document.getElementById("resetBtn");
 
 function updateScoreboard() {
   scoreboard.textContent = `Score: ${score} / ${total}`;
+  localStorage.setItem("score", score);
+  localStorage.setItem("total", total);
+}
+
+function updateTimer() {
+  timerDisplay.textContent = `⏳ Time left: ${timeLeft}`;
+}
+
+function startTimer() {
+  clearInterval(countdown);
+  timeLeft = 10;
+  updateTimer();
+  countdown = setInterval(() => {
+    timeLeft--;
+    updateTimer();
+    if (timeLeft <= 0) {
+      clearInterval(countdown);
+      showAnswer(true); // 自动触发显示答案
+    }
+  }, 1000);
 }
 
 function renderSentence(index) {
   const s = sentences[index];
-  app.innerHTML = "";
+  app.innerHTML = ""; // 清空旧内容
 
   const block = document.createElement("div");
 
@@ -59,19 +83,31 @@ function nextSentence() {
   total++;
   renderSentence(currentIndex);
   updateScoreboard();
+  startTimer();
 }
 
-function showAnswer() {
+function showAnswer(auto = false) {
   const full = document.getElementById("fullSentence");
   if (full && currentIndex >= 0) {
     full.textContent = sentences[currentIndex].sentence;
-    score++;
+    if (!auto) score++;
+    clearInterval(countdown);
     updateScoreboard();
   }
 }
 
-nextBtn.addEventListener("click", nextSentence);
-showAnswerBtn.addEventListener("click", showAnswer);
+function resetScore() {
+  score = 0;
+  total = 0;
+  localStorage.removeItem("score");
+  localStorage.removeItem("total");
+  updateScoreboard();
+}
 
-// 初始加载一句
+nextBtn.addEventListener("click", nextSentence);
+showAnswerBtn.addEventListener("click", () => showAnswer(false));
+resetBtn.addEventListener("click", resetScore);
+
+// 初始化
+updateScoreboard();
 nextSentence();
