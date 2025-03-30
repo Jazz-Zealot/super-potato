@@ -25,21 +25,21 @@ function updateTimer() {
 
 function startTimer() {
   clearInterval(countdown);
-  timeLeft = 10;
+  timeLeft = 30;
   updateTimer();
   countdown = setInterval(() => {
     timeLeft--;
     updateTimer();
     if (timeLeft <= 0) {
       clearInterval(countdown);
-      showAnswer(true); // 自动触发显示答案
+      showAnswer(true); // 自动触发显示答案，不加分
     }
   }, 1000);
 }
 
 function renderSentence(index) {
   const s = sentences[index];
-  app.innerHTML = ""; // 清空旧内容
+  app.innerHTML = "";
 
   const block = document.createElement("div");
 
