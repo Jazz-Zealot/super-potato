@@ -118,3 +118,5 @@ export const sentences = [
     image: "images/sentence10.png"
   }
 ];
+
+export default sentences;
