@@ -1,11 +1,48 @@
-import sentences from "./data.js";
+
+const sentences = [
+  {
+    id: 1,
+    sentence: "After six months of arguing and final 16 hours of hot parliamentary debates, Australia’s Northern Territory became the first legal authority in the world to allow doctors to take the lives of incurably ill patients who wish to die.",
+    parts: [
+      "After six months of arguing,",
+      "and final 16 hours of hot parliamentary debates,",
+      "Australia’s Northern Territory became the first legal authority in the world,",
+      "to allow doctors to take the lives of incurably ill patients who wish to die."
+    ],
+    audio: "audio/D1.mp3",
+    image: "images/sentence1.png"
+  },
+  {
+    id: 2,
+    sentence: "The casual friendliness of many Americans should be interpreted neither as superficial nor as artificial, but as the result of a historically developed cultural tradition.",
+    parts: [
+      "The casual friendliness of many Americans",
+      "should be interpreted neither as superficial,",
+      "nor as artificial,",
+      "but as the result of a historically developed cultural tradition."
+    ],
+    audio: "audio/D2.mp3",
+    image: "images/sentence2.png"
+  },
+  {
+    id: 3,
+    sentence: "For example, when an American uses the word 'friend', the cultural implications of the word may be quite different from those it has in the visitor’s language and culture.",
+    parts: [
+      "For example,",
+      "when an American uses the word 'friend',",
+      "the cultural implications of the word may be quite different",
+      "from those it has in the visitor’s language and culture."
+    ],
+    audio: "audio/D3.mp3",
+    image: "images/sentence3.png"
+  }
+];
 
 let currentIndex = -1;
 let score = parseInt(localStorage.getItem("score")) || 0;
 let total = parseInt(localStorage.getItem("total")) || 0;
 let countdown = null;
 let timeLeft = 30;
-const purchased = JSON.parse(localStorage.getItem("purchased")) || [];
 
 const app = document.getElementById("app");
 const scoreboard = document.getElementById("scoreboard");
@@ -13,28 +50,11 @@ const timerDisplay = document.getElementById("timer");
 const nextBtn = document.getElementById("nextBtn");
 const showAnswerBtn = document.getElementById("showAnswerBtn");
 const resetBtn = document.getElementById("resetBtn");
-const shopBtn = document.getElementById("shopBtn");
-const closeShopBtn = document.getElementById("closeShopBtn");
-const shop = document.getElementById("shop");
-const shopItemsDiv = document.getElementById("shopItems");
-const petCorner = document.getElementById("petCorner");
-
-const shopItems = [
-  { id: "autoplay", name: "🎧 自动播放", price: 5, effect: () => {} },
-  { id: "pet-dog", name: "🐶 小狗角标", price: 3, effect: () => showPet("dog") },
-  { id: "pet-cat", name: "🐱 小猫角标", price: 3, effect: () => showPet("cat") },
-  { id: "bg-blue", name: "🎨 蓝色背景", price: 2, effect: () => document.body.style.background = "#e0f7fa" }
-];
-
-function showPet(name) {
-  petCorner.innerHTML = `<img src="images/${name}.png" class="pet-icon">`;
-}
 
 function updateScoreboard() {
   scoreboard.textContent = `Score: ${score} / ${total}`;
   localStorage.setItem("score", score);
   localStorage.setItem("total", total);
-  localStorage.setItem("purchased", JSON.stringify(purchased));
 }
 
 function updateTimer() {
@@ -68,7 +88,6 @@ function renderSentence(index) {
   const audio = document.createElement("audio");
   audio.controls = true;
   audio.src = s.audio;
-  audio.id = "audioPlayer";
   block.appendChild(audio);
 
   const image = document.createElement("img");
@@ -90,8 +109,6 @@ function renderSentence(index) {
   block.appendChild(full);
 
   app.appendChild(block);
-
-  if (purchased.includes("autoplay")) audio.play();
 }
 
 function nextSentence() {
@@ -124,43 +141,14 @@ function showAnswer(auto = false) {
 function resetScore() {
   score = 0;
   total = 0;
-  localStorage.clear();
+  localStorage.removeItem("score");
+  localStorage.removeItem("total");
   updateScoreboard();
 }
 
-function renderShop() {
-  shopItemsDiv.innerHTML = "";
-  shopItems.forEach(item => {
-    const owned = purchased.includes(item.id);
-    const div = document.createElement("div");
-    div.innerHTML = `
-      <span>${item.name} (${item.price}分)</span>
-      <button ${owned ? "disabled" : ""}>${owned ? "已购买" : "购买"}</button>
-    `;
-    div.querySelector("button").addEventListener("click", () => {
-      if (score >= item.price && !owned) {
-        score -= item.price;
-        purchased.push(item.id);
-        item.effect();
-        updateScoreboard();
-        renderShop();
-      }
-    });
-    shopItemsDiv.appendChild(div);
-    if (owned) item.effect();
-  });
-}
-
-shopBtn.addEventListener("click", () => {
-  shop.classList.toggle("hidden");
-});
-closeShopBtn.addEventListener("click", () => {
-  shop.classList.add("hidden");
-});
 nextBtn.addEventListener("click", nextSentence);
 showAnswerBtn.addEventListener("click", () => showAnswer(false));
 resetBtn.addEventListener("click", resetScore);
 
 updateScoreboard();
-renderShop();
 nextSentence();
