@@ -134,8 +134,6 @@ export const sentences = [
     audio: "audio/D15.mp3",
     image: "images/sentence15.png"
   }
-],
-  [
   {
     id: 16,
     sentence: "The true enemies of science, argues Paul Ehrlich of Stanford University, a pioneer of environmental studies, are those who question the evidence supporting global warming, the depletion of the ozone layer and other consequences of industrial growth.",
