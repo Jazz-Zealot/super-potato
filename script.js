@@ -1,4 +1,4 @@
-import { sentences } from './data.js';
+import sentences from './data.js';
 
 let currentIndex = -1;
 let score = parseInt(localStorage.getItem("score")) || 0;
