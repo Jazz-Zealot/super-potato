@@ -116,7 +116,7 @@ export const sentences = [
     ],
     audio: "audio/D10.mp3",
     image: "images/sentence10.png"
-  }
+  },
   {
   id: 11,
   sentence: "Perhaps it is humankind’s long suffering at the mercy of flood and drought that makes the idea of forcing the waters to do our bidding so fascinating.",
